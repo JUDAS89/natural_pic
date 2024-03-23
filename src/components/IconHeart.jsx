@@ -1,9 +1,12 @@
 const IconHeart = ({ filled, onClick }) => {
+
+  const heartClass = filled ? "heart filled" : "heart";
   return (
     <svg
       onClick={onClick}
       width="40px"
       viewBox="0 0 24 24"
+      className={heartClass}
     >
       <path
         fill={filled ? "red" : "white"}

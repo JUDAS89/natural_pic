@@ -21,7 +21,7 @@ export const MyProvider = ({ children }) => {
     fetchData();
   }, []);
 
-  return <MyContext.Provider value={ {photos, favorites, setFavorites}}>{children}</MyContext.Provider>;
+  
 };
 
 export default MyContext;

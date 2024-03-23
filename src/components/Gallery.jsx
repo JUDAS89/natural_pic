@@ -11,9 +11,13 @@ const Gallery = () => {
   const photos = useContext(MyContext);
 
   return (
-    <div className="gallery grid-columns-5 p-3">
+    <div className="gallery grid-columns-5 p-3" style={{ position: "relative" }}>
       {photos.map((photo) => (
-        <img key={photo.id} src={photo.src.medium} alt={photo.alt} style={{width:'200px',weight:'150px' }}/>
+        <div key={photo.id} style={{ position: "relative", display: "inline-block" }}>
+          <img src={photo.src.tiny} alt={photo.alt}/>          
+          <span style={{ position: "absolute", bottom: 0, left: 0, width:"100%", textAlign: "left", color:"white", padding: "5px" }}>{photo.alt}</span>
+        </div>
+        
       ))}
     </div>
   );

@@ -8,6 +8,7 @@ const MyContext = createContext([]);
 
 export const MyProvider = ({ children }) => {
   const [photos, setPhotos] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,6 +16,7 @@ export const MyProvider = ({ children }) => {
         const response = await fetch("/photos.json");
         const data = await response.json();
         setPhotos(data.photos);
+        setFavorites(Array(data.photos.lenght).fill(false))
       } catch (error) {
         console.error("Error fetching photos:", error);
       }
@@ -23,7 +25,7 @@ export const MyProvider = ({ children }) => {
     fetchData();
   }, []);
 
-  return <MyContext.Provider value={photos}>{children}</MyContext.Provider>;
+  return <MyContext.Provider value={ {photos, favorites, setFavorites}}>{children}</MyContext.Provider>;
 };
 
 export default MyContext;

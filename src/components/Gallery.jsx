@@ -9,10 +9,10 @@ import MyContext from "../my_context";
 import IconHeart from "./IconHeart"
 
 const Gallery = () => {
-  const photos = useContext(MyContext);
+  const { photos, favorites, setFavorites } = useContext(MyContext);
 
     // Estado para almacenar el estado de favorito de cada imagen
-    const [favorites, setFavorites] = useState(Array(photos.length).fill(false));
+   /* const [favorites, setFavorites] = useState(Array(photos.length).fill(false));*/
 
     // Función para cambiar el estado de favorito de una imagen
     const toggleFavorite = (index) => {

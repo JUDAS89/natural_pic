@@ -1,7 +1,3 @@
-//import { createContext } from "react"
-//const MyContext=createContext ({})
-//export default MyContext
-
 import React, { createContext, useEffect, useState } from "react";
 
 const MyContext = createContext([]);

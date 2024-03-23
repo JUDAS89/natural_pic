@@ -12,7 +12,7 @@ export const MyProvider = ({ children }) => {
         const response = await fetch("/photos.json");
         const data = await response.json();
         setPhotos(data.photos);
-        setFavorites(Array(data.photos.lenght).fill(false))
+        setFavorites(Array(data.photos.length).fill(false))
       } catch (error) {
         console.error("Error fetching photos:", error);
       }

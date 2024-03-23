@@ -1,6 +1,7 @@
-const IconHeart = ({ filled }) => {
+const IconHeart = ({ filled, onClick }) => {
   return (
     <svg
+      onClick={onClick}
       width="40px"
       viewBox="0 0 24 24"
     >
